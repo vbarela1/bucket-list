@@ -1,0 +1,13 @@
+
+<%= form_for @bucketlist do |f| %>
+<div class="container">
+
+<div class="white-text">
+  <h3><%= f.label :bucketlist_title %></h3>
+  <h3><%= f.text_field :bucketlist_title %></h3>
+</div>
+
+<div class="black-text"><%= f.submit %></div>
+
+</div>
+<% end %>

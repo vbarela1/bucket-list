@@ -1,0 +1,18 @@
+
+<%= form_for [@bucketlist, @listitems] do |f| %>
+  <div>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </div>
+  <div>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  </div>
+    <div>
+  <%= f.label :complete %>
+  <%= f.check_box :complete %>
+  </div>
+  <div class="black-text"><%= f.submit %></div>
+
+<% end %>
+

@@ -1,0 +1,30 @@
+<h3 class="center">All Trips</h3>
+<br />
+<div class="center"><%= link_to 'Create New Bucketlist', new_bucketlist_path, class:'btn blue white-text' %></div>
+<div class="container">
+  <div class="row">
+    <% if @bucketlists.any? %>
+      <% @bucketlist.each do |trip| %>
+        <div class="col s12 m6">
+          <div class="z-depth-5">
+            <div class="card grey darken-1">
+              <div class="card-content">
+                <span class="card-title white-text"><%= bucketlist.bucketlist_title %></span>
+              </div>
+              <div class="card-action center">
+                <%= link_to "Show", bucketlist_path(bucketlist)%>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <h4>There are no bucketlists. Please make a new bucketlist.</h4>
+    <% end %>
+  </div>
+</div>
+<=% link_to "Create New Bucket List", new_bucketlist_path %>
+<div class='center'>
+  <%= will_paginate @bucketlists %>
+</div>
+
