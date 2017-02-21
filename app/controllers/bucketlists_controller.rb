@@ -3,7 +3,7 @@ class BucketlistsController < ApplicationController
   
   def index
     @title = 'Bucket Lists'
-    @bucketlists = current_user.bucketlists 
+    @bucketlists = current_user.bucketlists.paginate(page: params[:page], per_page: 6)
     # flash[:info] 'Welcome to Bucket Lists!'
   end
 

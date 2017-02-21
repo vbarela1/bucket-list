@@ -4,5 +4,6 @@ class Bucketlist < ApplicationRecord
   belongs_to :user
   has_many :listitems
 
+
 end
 

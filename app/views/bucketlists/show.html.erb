@@ -8,12 +8,12 @@
 
   <div class="center">
    <%= link_to 'View Bucketlist Item', bucketlist_listitem_path(@bucketlist), 
-       class:'btn blue white-text'%> 
+       class:'btn light-blue white-text'%> 
   
   <%= link_to 'Edit Bucketlist', edit_bucketlist_path(@bucketlist), 
-      class:'btn blue white-text'%>
+      class:'btn light-blue white-text'%>
   
-  <%= link_to 'Delete bucketlist', bucketlist_path(@bucketlist), class:'btn blue white-text', 
+  <%= link_to 'Delete bucketlist', bucketlist_path(@bucketlist), class:'btn light-blue white-text', 
       method: :delete, data: {confirm: 'Really Delete Trip?'} %>
   </div>
 </div>

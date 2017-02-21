@@ -16,6 +16,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise', '~> 4.2.0'
 gem 'materialize-sass'
 gem 'will_paginate'
+gem 'font-awesome-rails'
 
 
 group :development, :test do

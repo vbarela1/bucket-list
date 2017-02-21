@@ -1,0 +1,46 @@
+/*=======================================
+BACKGROUNDS 
+=======================================*/
+body {
+  background-color: lightgrey; 
+  background-image: url(http://wallup.net/wp-content/uploads/2016/04/06/330475-photography-landscape-nature-path-water-lake-sea-azores-748x468.jpg);
+  background-size: cover;
+}
+/*=======================================
+FLASH
+=======================================*/
+.flash {
+  text-align: center;
+  font-size: 17px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  background-color: grey;
+}
+
+.flash.info {
+  background-color: lightblue;
+}
+
+.flash.error {
+  background-color: red;
+}
+
+.flash.success { 
+  background-color: lightcyan;
+  color: black;
+}
+
+/*=======================================
+PAGINATION
+=======================================*/
+
+.pagination {
+  display: inline-block;
+  font-size: 20px;
+  background-color: lightgray;
+  width: 50%;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 30px;
+}
