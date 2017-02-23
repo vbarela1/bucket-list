@@ -1,5 +1,5 @@
 
-<%= form_for [@bucketlist, @listitems] do |f| %>
+<%= form_for [@bucketlist, @listitem] do |f| %>
   <div>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -8,9 +8,9 @@
   <%= f.label :description %>
   <%= f.text_field :description %>
   </div>
-    <div>
-  <%= f.label :complete %>
-  <%= f.check_box :complete %>
+  <div>
+  <input name="listitem[complete]" type="checkbox" id="complete" />
+  <label for="complete">complete ?</label>
   </div>
   <div class="black-text"><%= f.submit %></div>
 

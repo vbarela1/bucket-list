@@ -1,29 +1,26 @@
-class ListItemsController < ApplicationController
+class ListitemsController < ApplicationController
   before_action :set_bucketlist
-  before_action :set_list_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_listitem, only: [:show, :edit, :update, :destroy]
 
   def index
-    @title = 'Bucket List Items'
     @listitems = @bucketlist.listitems 
     flash[:info] = 'Welcome to the Bucket List Items!'
   end
 
-  def show
-    @title = @listitems.title 
+  def show 
   end
 
   def new
-    @title = 'Add New List Item.'
     @listitem = Listitem.new 
   end
 
   def create
-    @listitem = @bucketlist.listitem.new(listitem_parms)
+    @listitem = @bucketlist.listitems.new(listitem_params)
     if @listitem.save
       flash[:success] = 'New List Item Created!'
       redirect_to bucketlist_listitem_path(@bucketlist, @listitem)
     else  
-      flash[:error] = 'Please try Again.'
+      flash[:error] = "Please try Again. #{@listitem.errors.full_messages.to_sentence}"
       render :new
     end
   end 
@@ -56,7 +53,7 @@ private
     @listitem = @bucketlist.listitems.find(params[:id])
   end 
 
-  def listitems_params 
+  def listitem_params 
     params.require(:listitem).permit(:title, :description, :complete, :bucketlist_id)
   end 
 end

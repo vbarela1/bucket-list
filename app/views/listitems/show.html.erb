@@ -1,13 +1,8 @@
-<h1 class="center"> <%= @bucketlist.bucketlist_title %>: <%= @listitem.name %></h1>
+<h1 class="center"> <%= @bucketlist.title %>: <%= @listitem.title %></h1>
 <div class="container">
   <div class="row grey lighten-2">
     <div class="col s12 m6"><h5>Description:</h5><p><%= @listitem.description %></p></div>
   </div>
-  <div class="center">
-    <%= link_to 'Address to listitem', listitem_addresses_path(@listitem), class:'btn blue white-text'%>
-    <%= link_to 'Add Address', new_listitem_address_path(@listitem), class:'btn blue white-text'%>
-  </div>
-  <br />
   <div class="center"> 
     <%= link_to 'Edit listitem', edit_bucketlist_listitem_path(@bucketlist, @listitem), class:'btn blue white-text' %>
     <%= link_to 'Delete listitem', bucketlist_listitem_path(@bucketlist, @listitem), class:'btn blue white-text', method: :delete, data: {confirm: 'Really Delete Item?'}%>

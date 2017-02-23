@@ -3,21 +3,20 @@ class BucketlistsController < ApplicationController
   
   def index
     @title = 'Bucket Lists'
-    @bucketlists = current_user.bucketlists 
+    @bucketlists = current_user.bucketlists.paginate(page: params[:page], per_page: 6)
     # flash[:info] 'Welcome to Bucket Lists!'
   end
 
   def show
-    @title = current_user.bucketlists.title 
+ 
   end
 
   def new
-    @title = 'Add New Bucketlist'
     @bucketlist = current_user.bucketlists.new 
   end
 
   def create
-    @bucketlist = current_user.bucketlists.new(bucketlist_params)
+    @bucketlist = current_user.bucketlists.new(set_bucketlist_params)
     if @bucketlist.save 
       flash[:sucesss] = 'New Bucket List Created!'
       redirect_to bucketlist_path(@bucketlist)
@@ -32,7 +31,7 @@ class BucketlistsController < ApplicationController
   end
 
   def update
-    if @bucketlist.update(bucketlist_params)
+    if @bucketlist.update(set_bucketlist_params)
       flash[:success] = 'Bucket List Updated!'
       redirect_to bucketlist_path(@bucketlist)
     else 
@@ -49,7 +48,7 @@ class BucketlistsController < ApplicationController
 
 private 
   def set_bucketlist
-    @bucketlist = Bucketlists.find(parmas[:id])
+    @bucketlist = Bucketlist.find(params[:id])
   end 
 
   def set_bucketlist_params
