@@ -6,6 +6,7 @@ class User < ApplicationRecord
   
   has_many :bucketlists 
 
+
   def full_name 
     "#{first_name} #{last_name}"
   end 

@@ -17,6 +17,7 @@ gem 'devise', '~> 4.2.0'
 gem 'materialize-sass'
 gem 'will_paginate'
 gem 'font-awesome-rails'
+gem "paperclip", "~> 5.0.0"
 
 
 group :development, :test do

@@ -16,6 +16,11 @@ class ListitemsController < ApplicationController
 
   def create
     @listitem = @bucketlist.listitems.new(listitem_params)
+    if params[:listitem][:complete]
+      @listitem.complete = 'true'
+    else 
+      @listitem.complete = 'false' 
+    end 
     if @listitem.save
       flash[:success] = 'New List Item Created!'
       redirect_to bucketlist_listitem_path(@bucketlist, @listitem)
@@ -30,9 +35,9 @@ class ListitemsController < ApplicationController
   end
 
   def update 
-    if @listitem.update(listitem_param)
+    if @listitem.update(listitem_params)
       flash[:success] = 'List Item Updated!'
-      redirect_to listitem_path(@bucketlist, @listitem)
+      redirect_to bucketlist_listitem_path(@bucketlist, @listitem)
     else
       flash[:error] = 'Please Try Again'
       render :edit
@@ -54,7 +59,7 @@ private
   end 
 
   def listitem_params 
-    params.require(:listitem).permit(:title, :description, :complete, :bucketlist_id)
+    params.require(:listitem).permit(:title, :description)
   end 
 end
 

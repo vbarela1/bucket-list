@@ -1,12 +1,14 @@
 
-<%= form_for @bucketlist do |f| %>
+<%= form_for @bucketlist, html: { multipart: true } do |f| %>
 <div class="container">
 
-<div class="white-text">
+<div class="background grey black-text">
   <h3><%= f.label :title %></h3>
   <h3><%= f.text_field :title %></h3>
 </div>
-
+<div>
+<%=f.file_field :avatar %>
+</div>
 <div class="black-text"><%= f.submit %></div>
 
 </div>

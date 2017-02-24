@@ -1,15 +1,18 @@
 <h3 class="center">All Bucketlists</h3>
 <br />
-<div class="center"><%= link_to 'Create New Bucketlist', new_bucketlist_path, class:'btn light-blue white-text' %></div>
+<div class="center"><%= link_to 'Create New Bucketlist', new_bucketlist_path, class: 'btn light-green white-text' %></div>
 <div class="container">
   <div class="row">
-    <% unless @bucketlist.nil? %>
-      <% @bucketlist.each do |bucketlist| %>
+    <% unless @bucketlists.nil? %>
+      <% @bucketlists.each do |bucketlist| %>
         <div class="col s12 m6">
           <div class="z-depth-5">
             <div class="card grey darken-1">
+              <div class="card-image">
+                <%= image_tag bucketlist.avatar.url %>
+              </div>
               <div class="card-content">
-                <span class="card-title white-text"><%= bucketlist.bucketlist_title %></span>
+                  <span class="card-title white-text"><%= bucketlist.title %></span>
               </div>
               <div class="card-action center">
                 <%= link_to "Show", bucketlist_path(bucketlist)%>

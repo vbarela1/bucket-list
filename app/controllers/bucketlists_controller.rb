@@ -52,7 +52,7 @@ private
   end 
 
   def set_bucketlist_params
-    params.require(:bucketlist).permit(:title)
+    params.require(:bucketlist).permit(:title, :avatar)
   end 
 end
 

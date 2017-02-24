@@ -4,15 +4,16 @@
   <div class="row grey">
     <div class="col s12"><h3><%= @bucketlist.title %></h3></div>
   </div>
-
+  <%= image_tag @bucketlist.avatar.url(:medium) %>
   <div class="center">
    <%= link_to 'View Bucketlist Item', bucketlist_listitems_path(@bucketlist), 
-       class:'btn light-blue white-text'%> 
-  
+       class: 'btn light-green white-text'%><br />
+  <br />
   <%= link_to 'Edit Bucketlist', edit_bucketlist_path(@bucketlist), 
-      class:'btn light-blue white-text'%>
-  
-  <%= link_to 'Delete bucketlist', bucketlist_path(@bucketlist), class:'btn light-blue white-text', 
-      method: :delete, data: {confirm: 'Really Delete Trip?'} %>
+      class: 'btn light-green white-text'%><br />
+  <br />
+  <%= link_to 'Delete bucketlist', bucketlist_path(@bucketlist), class: 'btn light-green white-text', 
+      method: :delete, data: {confirm: 'Really Delete Trip?'} %><br />
+  <br />
   </div>
 </div>
